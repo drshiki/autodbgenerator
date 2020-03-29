@@ -1,0 +1,28 @@
+plugins {
+    id 'groovy'
+}
+
+group 'moe.dam'
+version '0.1-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    compile 'org.codehaus.groovy:groovy-all:2.4.15'
+    compile 'org.eclipse.persistence:javax.persistence:2.2.1'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('C:\\Users\\xiaog\\.m2\\repository'))
+        }
+    }
+}
